@@ -36,7 +36,7 @@ Trying to get the whole thing working instantly instead of putting smaller parts
 
 Now for the backend I chose same alpine but yarn instead of npm for package manager, this one was pretty simple compared to frontend in my mind. Some googled parts of code and it ran pretty much straight away. I also found out about .dockerignore file to hide some of the files that are unneccessary and take less space for Docker image so I added it and couple lines in there that seemed to be best practices. Starting the container and checking if the port shows anything and nothing showed up. I´ll chalk it up to same reason as frontend. Maybe someone will sophisticate me in the future? Also I decided to add .dockerignore file at this point to frontend also.
 
-Time for compose file. I found pretty good guide for that that is in the sources and it worked almost instantly after making it. Docker compose up and it all started and put the containers nicely in there like this:
+Time for compose file. I found pretty good guide for that that is in the sources and it worked almost instantly after making it. Start it with: Docker compose up. It all started and put the containers nicely in there like this:
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/263c795c-ccfa-4e71-8361-49e083891211)
 
