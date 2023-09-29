@@ -1,5 +1,16 @@
 # My documentation
 
+My computer specifications that im doing the assignment with:
+
+OS: Windows 10 Home
+Processor: Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz
+GPU: GeForce GTX 1080
+RAM: 16 gt
+
+Ancient "gaming" PC that can shut off and freeze at any moment and works in mysterious ways.
+
+# Getting started
+
 Having none of the required software installed I had to start with that. First I wrote docker for windows into search and clicked the first link and installed it. Unable to start Docker I had to enable virtualization in my BIOS settings. I restarted computer, pressed DEL and entered BIOS settings. There I enabled Intel virtualization and saved settings. Restarting my computer I was still unable to access Docker because I was missing virtualization software so I had to install something for that. I chose VirtualBox since I have previous experience with that. Googled VirtualBox, clicked downloads and there Windows hosts and it installed it. Next it complained about Linux kernel not being up to date so I googled the problem and opened cmd.exe as admin and entered: wsl --update after which it updated my kernel. Now my Docker was able to start and I made an account for it.
 
 Next up I decided to continue my work with this thing aka GitHub since I intend to return my work here. Logged into my old account and made weatherapp repo. I downloaded git bash for Windows since I figured it would be easier to use with their own commandline. After messing with the installing options and choosing the ones I like it started to install. My computer being the mess it is I decided to clone the assignments repo to my downloads folder. I went into the folder and right clicked open GIT Bash here. I went into the assignments repo, clicked code and there the https clone link. 
