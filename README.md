@@ -12,3 +12,36 @@ Entered command $ git clone https://github.com/eficode/weatherapp.git to get the
 
 Something about support for password authentication being removed so now I needed to figure workaround for it. Little bit of googling and I found out you can make personal access token to use instead of password and then it will work. Click Account -> settings -> Developer settings -> Personal access tokens. I chose fine grained token, gave it some name and in permissions I gave it permission to push to repo. Enter the command again and now in password screen I copied the token key and it worked pushing repo from my computer to GitHub.
 
+There was also something about needing API key so i went to the openweathermap website and tried to create account but found out I already had one. Interesting since I don´t remember having one. Well after recovering my account I went to look and I had active API key which I will use in this. I went into weatherapp files into backend folder there in src folder i found index.js file that needed like the place to put my API key in. I put my API key here like the syntax on weathermap side showed:
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/c664d1e7-546c-4500-8724-265dcd588ca2)
+
+
+# Docker
+
+Since I had no previous experience of using Docker I decided to do few simple tasks that it was recommending on the desktop clients page. After doing a couple of them I got the idea of the software but it didnt´t really give me anything on where to start building Dockerfile. I googled docker compose and hot reloading and realized I first need to get my regular Dockerfiles working before I can even think about those. I fell down rabbit hole with my Dockerfile searches with no real progress a couple hours later so I decided to take a little break. Trying to get the whole thing working instantly instead of putting smaller parts together. Then I accidently discovered piece of code that just made it work and got my container up on backend side.
+
+# Cloud
+
+# Ansible
+
+# Sources
+
+https://superuser.com/questions/1709437/how-can-i-update-the-kernel-in-wsl2-kernel-to-latest-release Read on 27.9.2023
+
+https://openweathermap.org/current#builtin Read on 28.9.2023
+
+https://siddharth-lakhara.medium.com/dockerizing-a-full-stack-js-app-ceb99411996e Read on 28.9.2023
+
+https://milanwittpohl.com/projects/tutorials/Full-Stack-Web-App/dockerizing-our-front-and-backend Read on 28.9.2023
+
+https://octopus.com/blog/using-nginx-docker-image Read on 28.9.2023
+
+https://hub.docker.com/_/nginx Reead on 28.9.2023
+
+https://www.freecodecamp.org/news/how-to-enable-live-reload-on-docker-based-applications/ Read on 28.9.2023
+
+https://medium.com/@kartikio/setup-node-ts-local-development-environment-with-docker-and-hot-reloading-922db9016119 Read on 28.9.2023
+
+https://medium.com/greedygame-engineering/so-you-want-to-dockerize-your-react-app-64fbbb74c217 Read on 28.9.2023
+
