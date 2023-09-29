@@ -23,7 +23,13 @@ Since I had no previous experience of using Docker I decided to do few simple ta
 
 Trying to get the whole thing working instantly instead of putting smaller parts together I started frontend Dockerfile first. For the frontend Dockerfile, I need some engine to host my website and I chose nginx. Installed extension to my docker and made Dockerfile based on ideas from internet. Had some trouble getting it to work but then I added script to package.json file and it started doing something. For some reason my page only showed the basic nginx page instead of that file I was given. Tried to get it to work but it was hopeless. Thought came to my mind that maybe I needed to do react part of the tasks to have it really working so I just left it like that. I got my container to start and show something that´s gotta count for something right? You can read more of my thoughts (if there was any sense in them) about that one inside the Dockerfile comments. 
 
-Now for the backend I chose same alpine but yarn instead of npm for package manager, this one was pretty simple compared to frontend in my mind. Some googled parts of code and it ran pretty much straight away. I also found out about .dockerignore file to hide some of the files that are unneccessary for Docker image so I added it and couple lines in there that seemed to be best practices. Starting the container and checking if the port shows anything and nothing showed up. I´ll chalk it up to same reason as frontend. Maybe someone will sophisticate me in the future?
+Now for the backend I chose same alpine but yarn instead of npm for package manager, this one was pretty simple compared to frontend in my mind. Some googled parts of code and it ran pretty much straight away. I also found out about .dockerignore file to hide some of the files that are unneccessary and take less space for Docker image so I added it and couple lines in there that seemed to be best practices. Starting the container and checking if the port shows anything and nothing showed up. I´ll chalk it up to same reason as frontend. Maybe someone will sophisticate me in the future? Also I decided to add .dockerignore file at this point to frontend also.
+
+Time for compose file. I found pretty good guide for that that is in the sources and it worked almost instantly after making it. Docker compose up and it all started and put the containers nicely in there like this:
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/263c795c-ccfa-4e71-8361-49e083891211)
+
+Still nothing while clicking the open ports. There was something about not using localhost as the access to site but for the life of me I couldn´t figure it out. This might be a problem with my computer and all the weird settings that I have setup in it over the years. Who knows.
 
 # Cloud
 
