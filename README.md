@@ -3,8 +3,11 @@
 My computer specifications that im doing the assignment with:
 
 OS: Windows 10 Home
+
 Processor: Intel(R) Core(TM) i7-4770K CPU @ 3.50GHz
+
 GPU: GeForce GTX 1080
+
 RAM: 16 gt
 
 Ancient "gaming" PC that can shut off and freeze at any moment and works in mysterious ways.
