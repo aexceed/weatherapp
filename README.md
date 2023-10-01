@@ -45,7 +45,7 @@ Time for compose file. I found pretty good guide for that that is in the sources
 
 Still nothing while clicking the open ports. There was something about not using localhost as the access to site but for the life of me I couldn´t figure it out. This might be a problem with my computer and all the weird settings that I have setup in it over the years. Who knows.
 
-Volumes and hot reload. As far as volumes are concerned I understood that it´s as simple as adding volumes part with service names in to the compose document. I tried searching about hot reload and what to do to achieve it. For me it loads everything up lightning fastCouldn´t quite grasp how to do it or if I had allready done it partly with my progress so far so I just left it for now because it´s time to progress in my assignment.
+Volumes and hot reload. As far as volumes are concerned I understood that it´s as simple as adding volumes part with service names in to the compose document. I tried searching about hot reload and what to do to achieve it. For me it loads everything up lightning fast. Couldn´t quite grasp how to do it or if I had allready done it partly with my progress so far so I just left it for now because it´s time to move forward in my assignment.
 
 # Cloud
 
