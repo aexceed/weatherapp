@@ -65,7 +65,7 @@ Went into my AWS console to look and there they actually were, load balancers an
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/2b78f8da-a0fb-4c93-ba54-c3925cb0529a)
 
-I just uhh found a slight problem, I could not find the address where to check whatever it is running there the empty nginx page or just about anything. Odd problem to run into but yeah uhh... It obviously launched something but yeah I really dont know what happened. I´ll just put it in the first time using containers in cloud blame basket. I´d be interested to know what really happened and why. Did it shutdown just as fast as it launched and thats why I couldn´t find it?
+I just uhh found a slight problem, I could not find the address where to check whatever it is running there the empty nginx page or just about anything. Odd problem to run into but yeah uhh... It obviously launched something but yeah I really dont know what happened. I´ll just put it in the first time using containers in cloud blame basket. I´d be interested to know what really happened and why. Did it shutdown just as fast as it launched and thats why I couldn´t find it? Maybe I should have defined what AWS services it starts and how it configures them in compose document or some other document?
 
 # Ansible
 
@@ -99,3 +99,4 @@ https://aws.amazon.com/blogs/containers/deploy-applications-on-amazon-ecs-using-
 
 https://www.biostars.org/p/9531985/ Read on 1.10.2023
 
+https://docs.docker.com/cloud/ecs-integration/ Read on 1.10.2023
