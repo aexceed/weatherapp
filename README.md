@@ -45,10 +45,19 @@ Time for compose file. I found pretty good guide for that that is in the sources
 
 Still nothing while clicking the open ports. There was something about not using localhost as the access to site but for the life of me I couldn´t figure it out. This might be a problem with my computer and all the weird settings that I have setup in it over the years. Who knows.
 
-Volumes and hot reload. As far as volumes are concerned I understood that it´s as simple as adding volumes part with service names in to the compose document. I tried searching about hot reload and what to do to achieve it. Couldn´t quite grasp how to do it or if I had allready done it partly with my progress so far so I just left it for now because it´s time to progress in my assignment.
+Volumes and hot reload. As far as volumes are concerned I understood that it´s as simple as adding volumes part with service names in to the compose document. I tried searching about hot reload and what to do to achieve it. For me it loads everything up lightning fastCouldn´t quite grasp how to do it or if I had allready done it partly with my progress so far so I just left it for now because it´s time to progress in my assignment.
 
 # Cloud
 
+My public cloud of choice for this part of the assignment is AWS. I have no idea what to expect in getting the containers to work in cloud so time to get started. Apparently AWS has pretty good documentation how to do this so I started following the guide. I created context and set my variables in my git bash inside my weatherapp folder. Changed context to new context with docker context use myecscontext -command. AWS variables I set like this:
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/ed750243-f0bf-44c7-8edd-24e1c033243e)
+
+Tried to compose up but it gave me warning about unsupported build attribute. Issue turned out to be that I hadn´t uploaded my images to dockerhub. So quick googling how to do that and it was simple command where you tag the image first and then send it to your dockerhub.
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/195e0360-9ab0-41c6-b7e6-4f1de71497c5)
+
+I did have to change context back to default for that to work with command: docker context use default. Did the same to my frontend image and now they were there. Changed context back to ecs one and tried composing. Same warning came and then a thought came to my mind that I might have to refer those images in my Dockerfile or compose file.
 # Ansible
 
 # Sources
@@ -72,4 +81,10 @@ https://medium.com/@kartikio/setup-node-ts-local-development-environment-with-do
 https://medium.com/greedygame-engineering/so-you-want-to-dockerize-your-react-app-64fbbb74c217 Read on 28.9.2023
 
 https://shisho.dev/blog/posts/how-to-use-dockerignore/ Read on 28.9.2023
+
+https://docs.docker.com/compose/compose-file/07-volumes/ Read on 30.9.2023
+
+https://docs.docker.com/storage/volumes/ Read on 30.9.2023
+
+https://aws.amazon.com/blogs/containers/deploy-applications-on-amazon-ecs-using-docker-compose/ Read on 1.10.2023
 
