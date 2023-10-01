@@ -57,7 +57,7 @@ Tried to compose up but it gave me warning about unsupported build attribute. Is
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/bc5f2166-2eb0-456f-afb3-54464cfafbc1)
 
-Did the same for frontend and now they were there. Tried composing it again after changing the attribute to ecs context but it kept giving me the same error about attribute. Thought came to my mind that maybe I have to refer the hub image in my compose file. Went into compose file and changed build to my image: eep97/*images*. It started working, caught me bit by surprise.
+Did the same for frontend and now they were there. Tried composing it again after changing the attribute to ecs context but it kept giving me the same error about attribute. Thought came to my mind that maybe I have to refer the hub image in my compose file. Went into compose file and changed build to my image: eep97/ * images *. It started working, caught me bit by surprise.
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/de5768c4-4d31-4a89-95f7-c58f07a6e503)
 
@@ -65,8 +65,7 @@ Went into my AWS console to look and there they actually were, load balancers an
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/2b78f8da-a0fb-4c93-ba54-c3925cb0529a)
 
-I just uhh found a slight problem, I could not find the address where to check whatever it is running there the empty nginx page or something else. Odd problem to run into but yeah uhh...
-
+I just uhh found a slight problem, I could not find the address where to check whatever it is running there the empty nginx page or just about anything. Odd problem to run into but yeah uhh... It obviously launched something but yeah I really dont know what happened. I´ll just put it in the first time using containers in cloud blame basket. I´d be interested to know what really happened and why. Did it shutdown just as fast as it launched and thats why I couldn´t find it?
 
 # Ansible
 
