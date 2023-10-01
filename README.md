@@ -53,11 +53,21 @@ My public cloud of choice for this part of the assignment is AWS. I have no idea
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/ed750243-f0bf-44c7-8edd-24e1c033243e)
 
-Tried to compose up but it gave me warning about unsupported build attribute. Issue turned out to be that I hadn´t uploaded my images to dockerhub. So quick googling how to do that and it was simple command where you tag the image first and then send it to your dockerhub.
+Tried to compose up but it gave me warning about unsupported build attribute. Issue turned out to be that I hadn´t uploaded my images to dockerhub. So quick googling how to do that and it was simple command where you tag the image first and then send it to your dockerhub. I also had to login to docker.io throught console for it to work.
 
-![image](https://github.com/aexceed/weatherapp/assets/129611461/195e0360-9ab0-41c6-b7e6-4f1de71497c5)
+![image](https://github.com/aexceed/weatherapp/assets/129611461/bc5f2166-2eb0-456f-afb3-54464cfafbc1)
 
-I did have to change context back to default for that to work with command: docker context use default. Did the same to my frontend image and now they were there. Changed context back to ecs one and tried composing. Same warning came and then a thought came to my mind that I might have to refer those images in my Dockerfile or compose file.
+Did the same for frontend and now they were there. Tried composing it again after changing the attribute to ecs context but it kept giving me the same error about attribute. Thought came to my mind that maybe I have to refer the hub image in my compose file. Went into compose file and changed build to my image: eep97/*images*. It started working, caught me bit by surprise.
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/de5768c4-4d31-4a89-95f7-c58f07a6e503)
+
+Went into my AWS console to look and there they actually were, load balancers and everything created.
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/2b78f8da-a0fb-4c93-ba54-c3925cb0529a)
+
+I just uhh found a slight problem, I could not find the address where to check whatever it is running there the empty nginx page or something else. Odd problem to run into but yeah uhh...
+
+
 # Ansible
 
 # Sources
@@ -87,4 +97,6 @@ https://docs.docker.com/compose/compose-file/07-volumes/ Read on 30.9.2023
 https://docs.docker.com/storage/volumes/ Read on 30.9.2023
 
 https://aws.amazon.com/blogs/containers/deploy-applications-on-amazon-ecs-using-docker-compose/ Read on 1.10.2023
+
+https://www.biostars.org/p/9531985/ Read on 1.10.2023
 
