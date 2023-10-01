@@ -6,7 +6,7 @@ const fetch = require('node-fetch');
 const cors = require('kcors');
 
 const appId = process.env.APPID || '';
-const mapURI = process.env.MAP_ENDPOINT || "http://api.openweathermap.org/data/2.5";
+const mapURI = process.env.MAP_ENDPOINT || "http://api.openweathermap.org/data/2.5/weather?&appid=de36b29cb37b5c8e8ab322a75099974d";
 const targetCity = process.env.TARGET_CITY || "Helsinki,fi";
 
 const port = process.env.PORT || 9000;

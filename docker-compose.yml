@@ -1,0 +1,27 @@
+version: '3'
+
+
+#Tell what services it starts and builds and how, also link frontend to backend in hopes that it understands.
+services:
+
+  frontend:
+    image: eep97/weatherapp-frontend
+    ports:
+      - "3000:3000"
+    container_name: frontend-container
+    restart: always
+    links:
+      - backend
+
+  backend:
+    image: eep97/weatherapp-backend
+    ports:
+      - "8080:8080"
+    container_name: backend-container
+    restart: always
+
+#With volume the docker container starts up very quickly after the first launch
+
+volumes:
+  frontend:
+  backend:
