@@ -10,7 +10,7 @@ GPU: GeForce GTX 1080
 
 RAM: 16 gt
 
-Ancient "gaming" PC that can shut off and freeze at any moment and works in mysterious ways.
+Ancient "gaming" PC that can shut off or freeze at any moment and works in mysterious ways.
 
 # Getting started
 
@@ -35,7 +35,7 @@ There was also something about needing API key so i went to the openweathermap w
 
 Since I had no previous experience of using Docker I decided to do few simple tasks that it was recommending on the desktop clients page. After doing a couple of them I got the idea of the software but it didnt´t really give me anything on where to start building Dockerfile. I googled docker compose and hot reloading and realized I first need to get my regular Dockerfiles working before I can even think about those. I fell down rabbit hole with my Dockerfile searches with no real progress a couple hours later so I decided to take a little break. 
 
-Trying to get the whole thing working instantly instead of putting smaller parts together I started frontend Dockerfile first. For the frontend Dockerfile, I need some engine to host my website and I chose nginx. Installed extension to my docker and made Dockerfile based on ideas from internet. Had some trouble getting it to work but then I added script to package.json file and it started doing something. For some reason my page only showed the basic nginx page instead of that file I was given. Tried to get it to work but it was hopeless. Thought came to my mind that maybe I needed to do react part of the tasks to have it really working so I just left it like that. I got my container to start and show something that´s gotta count for something right? You can read more of my thoughts (if there was any sense in them) about that one inside the Dockerfile comments. 
+Trying to get the whole thing working instantly instead of putting smaller parts together I started frontend Dockerfile first. I tried a few iterations but got kind of lost in the sauce and forgot to document them, my bad there. I got the dockerfile and container started but then when it didn´t show anything in browser I thought maybe I need some kind of web server. I chose nginx and continued work with dockerfile.  Installed nginx extension to my docker and made Dockerfile based on ideas from internet. Had some trouble getting it to work but then I added script to package.json file and it started doing something. For some reason my page only showed the basic nginx page instead of that file I was given. Tried to get it to work but it was hopeless. Thought came to my mind that maybe I needed to do react part of the tasks to have it really working so I just left it like that. I got my container to start and show something that´s gotta count for something right? You can read more of my thoughts (if there was any sense in them) about that one inside the Dockerfile comments. 
 
 Now for the backend I chose same alpine but yarn instead of npm for package manager, this one was pretty simple compared to frontend in my mind. Some googled parts of code and it ran pretty much straight away. I also found out about .dockerignore file to hide some of the files that are unneccessary and take less space for Docker image so I added it and couple lines in there that seemed to be best practices. Starting the container and checking if the port shows anything and nothing showed up. I´ll chalk it up to same reason as frontend. Maybe someone will sophisticate me in the future? Also I decided to add .dockerignore file at this point to frontend also.
 
@@ -45,7 +45,7 @@ Time for compose file. I found pretty good guide for that that is in the sources
 
 Still nothing while clicking the open ports. There was something about not using localhost as the access to site but for the life of me I couldn´t figure it out. This might be a problem with my computer and all the weird settings that I have setup in it over the years. Who knows.
 
-Volumes and hot reload. As far as volumes are concerned I understood that it´s as simple as adding volumes part with service names in to the compose document. I tried searching about hot reload and what to do to achieve it. For me it loads everything up lightning fast. Couldn´t quite grasp how to do it or if I had allready done it partly with my progress so far so I just left it for now because it´s time to move forward in my assignment.
+Volumes and hot reload. As far as volumes are concerned I understood that it´s as simple as adding volumes part with service names in to the compose document. I tried searching about hot reload and what to do to achieve it. For me it loads everything up lightning fast. I made reload folder in the weatherapp but I wasn´t quite sure what to do with it. Should I put compose file in there? Does it know where to find front and backend even if they are on same folder tree level as compose file? Couldn´t quite grasp how to do it or if I had allready done it partly with my progress so far so I just left it for now because it´s time to move forward in my assignment.
 
 # Cloud
 
@@ -65,10 +65,22 @@ Went into my AWS console to look and there they actually were, load balancers an
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/2b78f8da-a0fb-4c93-ba54-c3925cb0529a)
 
-I just uhh found a slight problem, I could not find the address where to check whatever it is running there the empty nginx page or just about anything. Odd problem to run into but yeah uhh... It obviously launched something but yeah I really dont know what happened. I´ll just put it in the first time using containers in cloud blame basket. I´d be interested to know what really happened and why. Did it shutdown just as fast as it launched and thats why I couldn´t find it? Maybe I should have defined what AWS services it starts and how it configures them in compose document or some other document?
+I just uhh found a slight problem, I could not find the address where to check whatever it is running there the empty nginx page or just about anything. Odd problem to run into but yeah uhh... It obviously launched something but yeah I really dont know what happened. I´ll just put it in the first time using containers in cloud blame basket. I´d be interested to know what really happened and why. Did it shutdown just as fast as it launched and thats why I couldn´t find it? 
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/38b48894-05c7-46fb-a329-ea2e742d92a0)
+
+
+Maybe I should have defined what AWS services it starts and how it configures them in compose document or some other document?
 
 # Ansible
 
+This one is another new one for me so I started by reading how it works and whats the syntax for it. Seems to be as simple as playbook.yml file that does it all. Many sites have information about using it but in linux and well im using windows for now so it might increase the level of difficulty for this. First I need to install ansible. Guide told me I need python first which I did not have in this computer installed so I got that one first from pythons website. Next I went into cmd.exe as admin and used command pip install ansible to install it. Tried checking version for ansible but a weird error about AttributeError: module 'os' has no attribute 'get_blocking'. Something about adding python to system variables so I went ahead and did it but still nothing. Starting to get on my nerves and now I remember again why you should use Linux for this kind of stuff. I might just have to write the file blind and hope it works can´t seem to figure a workaround for this.
+
+Took a couple hours of mental reset so I could continue solving the problem. I tried re-installing python to different folder but to no avail. On ansible documentation in their website I found a page where they say that you cannot use windows for ansible control node so I guess im then done for? Other places say that you can install ansible on windows but im starting to believe otherwise because their guides are not doing it for me. And now I found ansible folder in my computer somewhere in hidden files that took like 10 minutes inside the computers search feature. Im not actually root user for my computer because of the way it was set up when I bought it like 10 years ago so it went into some really funky place I had no idea that existed.
+
+![image](https://github.com/aexceed/weatherapp/assets/129611461/695938ae-fc08-46a8-8225-1d565ede66fc)
+
+There it is... somewhere. I started writing playbook file for windows host and those use chocolatey for package manager. I got the first part written how you get docker installed with ansible but then I found issue that how am I going to get my docker compose file there? If I used images I built previously it would be easier but that´s not my goal, I want it to work just like before with compose up. Do I install also git with ansible and clone my git in playbook and then tell it to use the compose file? Well I managed to put something close to right solution in there I hope. At this point my brain is just fried and I have to stop.
 # Sources
 
 https://superuser.com/questions/1709437/how-can-i-update-the-kernel-in-wsl2-kernel-to-latest-release Read on 27.9.2023
@@ -100,3 +112,15 @@ https://aws.amazon.com/blogs/containers/deploy-applications-on-amazon-ecs-using-
 https://www.biostars.org/p/9531985/ Read on 1.10.2023
 
 https://docs.docker.com/cloud/ecs-integration/ Read on 1.10.2023
+
+https://medium.com/@viknesh2798/how-to-fix-the-issues-while-using-python-command-in-the-command-prompt-ba56d9018c5f Read on 2.10.2023
+
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#control-node-requirements Read on 2.10.2023
+
+https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-windows Read on 2.10.2023
+
+https://www.ansiblepilot.com/articles/install-docker-in-windows-like-systems-ansible-module-win_chocolatey/#ansible-module-win_chocolatey Read on 2.10.2023
+
+https://medium.com/swlh/deploying-docker-compose-applications-with-ansible-and-github-actions-7f1740392507 Read on 2.10.2023
+
+https://xavier-pestel.medium.com/how-to-manage-docker-compose-with-ansible-c08933ba88a8 Read on 2.10.2023
