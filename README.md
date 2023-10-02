@@ -69,6 +69,8 @@ I just uhh found a slight problem, I could not find the address where to check w
 
 # Ansible
 
+This one is another new one for me so I started by reading how it works and whats the syntax for it. Seems to be as simple as playbook.yml file that does it all. Many sites have information about using it but in linux and well im using windows for now so it might increase the level of difficulty for this. First I need to install ansible. Guide told me I need python first which I did not have in this computer installed so I got that one first from pythons website. Next I went into cmd.exe as admin and used command pip install ansible to install it. Tried checking version for ansible but a weird error about AttributeError: module 'os' has no attribute 'get_blocking'. Something about adding python to system variables so I went ahead and did it but still nothing. Starting to get on my nerves and now I remember again why you should use Linux for this kind of stuff. I might just have to write the file blind and hope it works can´t seem to figure a workaround for this.
+
 # Sources
 
 https://superuser.com/questions/1709437/how-can-i-update-the-kernel-in-wsl2-kernel-to-latest-release Read on 27.9.2023
@@ -100,3 +102,7 @@ https://aws.amazon.com/blogs/containers/deploy-applications-on-amazon-ecs-using-
 https://www.biostars.org/p/9531985/ Read on 1.10.2023
 
 https://docs.docker.com/cloud/ecs-integration/ Read on 1.10.2023
+
+https://medium.com/@viknesh2798/how-to-fix-the-issues-while-using-python-command-in-the-command-prompt-ba56d9018c5f Read on 2.10.2023
+
+https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.html#control-node-requirements Read on 2.10.2023
