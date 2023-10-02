@@ -70,7 +70,7 @@ I just uhh found a slight problem, I could not find the address where to check w
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/38b48894-05c7-46fb-a329-ea2e742d92a0)
 
 
-Maybe I should have defined what AWS services it starts and how it configures them in compose document or some other document?
+It did start deleting what it created pretty quickly after so maybe it kind of realized that the app does not work? Maybe I should have defined what AWS services it starts and how it configures them in compose document or some other document?
 
 # Ansible
 
