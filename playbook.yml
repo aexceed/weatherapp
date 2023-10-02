@@ -1,0 +1,32 @@
+- name: install Docker
+  hosts: all
+  become: false
+  gather_facts: false
+  tasks:
+    - name: Install Docker
+      chocolatey.chocolatey.win_chocolatey:
+        name: "docker-desktop"
+        state: present
+
+- name: download git-client
+  tasks:
+    - name: Install Git
+      chocolatey.chocolatey.win_chocolatey:
+        name: "git"
+        state: present
+
+
+- name: start docker, clone git and start the compose document
+  tasks:
+    - name: start and enable docker service
+          service:
+            name: docker
+            state: started
+            enabled: yes
+
+    - name: Clone my app repo
+      command: git clone /home/ https://github.com/aexceed/weatherapp.git
+
+    - name: start compose document
+      docker-compose:
+      state: present
