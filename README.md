@@ -80,7 +80,28 @@ Took a couple hours of mental reset so I could continue solving the problem. I t
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/695938ae-fc08-46a8-8225-1d565ede66fc)
 
-There it is... somewhere. I started writing playbook file for windows host and those use chocolatey for package manager. I got the first part written how you get docker installed with ansible but then I found issue that how am I going to get my docker compose file there? If I used images I built previously it would be easier but that´s not my goal, I want it to work just like before with compose up. Do I install also git with ansible and clone my git in playbook and then tell it to use the compose file? Well I managed to put something close to right solution in there I hope. At this point my brain is just fried and I have to stop.
+There it is... somewhere. I started writing playbook file for windows host and those use chocolatey for package manager. I got the first part written how you get docker installed with ansible but then I found issue that how am I going to get my docker compose file there? If I used images I built previously it would be easier but that´s not my goal, I want it to work just like before with compose up. Do I install also git with ansible and clone my git in playbook and then tell it to use the compose file? Well I managed to put something close to right solution in there I hope. I missed part about using some inventory file somewhere in this mess, didn´t create one because I saw no use for it in my app. At this point my brain is just fried and I have to stop.
+
+# How to use my app with Windows in AWS
+
+1. Install docker for desktop https://desktop.docker.com/win/main/amd64/Docker%20Desktop%20Installer.exe
+
+2. Install git https://github.com/git-for-windows/git/releases/download/v2.42.0.windows.2/Git-2.42.0.2-64-bit.exe
+
+3. Make/use AWS account, go to security credentials under your name.
+
+4. Create access key. (Not recommended really bad practise to do it the way I did)
+
+6. Go to where ever you want to use my app and right click in folder to open git bash.
+
+7. git clone https://github.com/aexceed/weatherapp.git
+
+8. In bash use command: cd weatherapp. Next: docker context create myecscontext, docker context use myecscontext. Then: export AWS_ACCESS_KEY_ID=insertyourshere. export AWS_SECRET_ACCESS_KEY_ID=insertyourshere. export AWS_DEFAULT_REGION=whatregionyouwanttouse.
+
+9. In bash: docker compose up
+
+10. That´s it the app is created in cloud even though nothing works properly.
+
 # Sources
 
 https://superuser.com/questions/1709437/how-can-i-update-the-kernel-in-wsl2-kernel-to-latest-release Read on 27.9.2023
