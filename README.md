@@ -80,7 +80,7 @@ Took a couple hours of mental reset so I could continue solving the problem. I t
 
 ![image](https://github.com/aexceed/weatherapp/assets/129611461/695938ae-fc08-46a8-8225-1d565ede66fc)
 
-There it is... somewhere. I started writing playbook file for windows host and those use chocolatey for package manager. I got the first part written how you get docker installed with ansible but then I found issue that how am I going to get my docker compose file there? If I used images I built previously it would be easier but that´s not my goal, I want it to work just like before with compose up. Do I install also git with ansible and clone my git in playbook and then tell it to use the compose file?
+There it is... somewhere. I started writing playbook file for windows host and those use chocolatey for package manager. I got the first part written how you get docker installed with ansible but then I found issue that how am I going to get my docker compose file there? If I used images I built previously it would be easier but that´s not my goal, I want it to work just like before with compose up. Do I install also git with ansible and clone my git in playbook and then tell it to use the compose file? Well I managed to put something close to right solution in there I hope. At this point my brain is just fried and I have to stop.
 # Sources
 
 https://superuser.com/questions/1709437/how-can-i-update-the-kernel-in-wsl2-kernel-to-latest-release Read on 27.9.2023
