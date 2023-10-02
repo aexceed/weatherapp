@@ -120,3 +120,7 @@ https://docs.ansible.com/ansible/latest/installation_guide/intro_installation.ht
 https://docs.ansible.com/ansible/latest/installation_guide/installation_distros.html#installing-ansible-on-windows Read on 2.10.2023
 
 https://www.ansiblepilot.com/articles/install-docker-in-windows-like-systems-ansible-module-win_chocolatey/#ansible-module-win_chocolatey Read on 2.10.2023
+
+https://medium.com/swlh/deploying-docker-compose-applications-with-ansible-and-github-actions-7f1740392507 Read on 2.10.2023
+
+https://xavier-pestel.medium.com/how-to-manage-docker-compose-with-ansible-c08933ba88a8 Read on 2.10.2023
